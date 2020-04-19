@@ -1,0 +1,12 @@
+<p>Details for User: <%= @user_name %></p>
+<p>Email: <%= @user_email %></p>
+<p>Interests: <%= @user_interests %></p>
+
+<p>
+  Other Users: 
+  <% @users.each do |user, _| %>
+    <%  unless user == @user_name.to_sym %>
+      <a href="/users/<%= user %>"><%= user %></a>
+    <% end %>
+  <% end %>
+</p>
